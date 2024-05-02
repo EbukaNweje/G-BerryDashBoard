@@ -130,6 +130,7 @@ const TradingPlans = () => {
                 console.log(error);
             });
     };
+    
 
     useEffect(() => {
         getallPlan();
@@ -249,7 +250,9 @@ const TradingPlans = () => {
                                 className={`TradingPlansLeftBoxADrop ${
                                     showSelect ? "active" : ""
                                 }`}
-                            >
+                            > 
+                            {
+                                !userPlane ? "Loading..." : <>
                                 {userPlane?.map((item, index) => (
                                     <div
                                         key={index}
@@ -267,6 +270,9 @@ const TradingPlans = () => {
                                         </h3>
                                     </div>
                                 ))}
+                                </>
+                            }
+                                
                             </div>
                         </div>
                         <div className="TradingPlansLeftBoxC">
