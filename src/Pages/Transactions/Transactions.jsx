@@ -36,8 +36,8 @@ const Transactions = () => {
         setTransOthers(true);
     };
 
-    const url = "https://g-berrybackend.onrender.com/api/alldeposit"
-    const url2 = "https://g-berrybackend.onrender.com/api/allwithdrawal"
+    const url = `https://g-berrybackend.onrender.com/api/getalldeposit/${id}`
+    const url2 = `https://g-berrybackend.onrender.com/api/getallwithdrawal/${id}`
     const url3 = `https://g-berrybackend.onrender.com/api/getalltransactions/${id}`
 
     const getAllDeposit = ()=>{

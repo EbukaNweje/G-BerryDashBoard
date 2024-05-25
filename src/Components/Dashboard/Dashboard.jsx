@@ -47,7 +47,7 @@ const Dashboard = () => {
     const [userData, setUserdata] = useState({});
 
     const handleGetUser = async () => {
-        fetch(`https://g-berrybackend.onrender.com/api/userdata/${id}`, {
+        fetch(`https://g-berry-back-end.vercel.app/api/userdata/${id}`, {
             method: "GET",
         })
             .then((response) => response.json())
