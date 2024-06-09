@@ -224,6 +224,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  margin-bottom: 10px;
 }
 .WithdrawFundsContentBox4 input::placeholder{
   color: #8492a6;;
@@ -264,6 +265,24 @@
   outline: none;
 }
 
+
+.Sweet {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  gap: 10px;
+
+  & button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: #ffff;
+    background: #0E4152;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Nunito Sans", sans-serif;
+  }
+}
 
 
 

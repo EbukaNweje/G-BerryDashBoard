@@ -107,6 +107,50 @@ const sendWithdrawcode = ()=>{
             setWithdrawalWalletEroo('');
         }
       };
+      const handleBTC = (e) => {
+        const newAmounts = e.target.value;
+        setBtc(newAmounts);
+        // Validate the email
+        if(newAmounts.trim() === '') {
+            setWithdrawalWalletEroo('Wallet is required');
+        }else {
+            setWithdrawalWalletEroo('');
+        }
+      };
+      const handleBank= (e) => {
+        const newAmounts = e.target.value;
+        setWithdrawalWallet(newAmounts);
+        // Validate the email
+        if(newAmounts.trim() === '') {
+            setWithdrawalWalletEroo('Wallet is required');
+        }else {
+            setWithdrawalWalletEroo('');
+        }
+      };
+      const handleAccouht= (e) => {
+        const newAmounts = e.target.value;
+        setWithdrawalWallet(newAmounts);
+        // Validate the email
+        if(newAmounts.trim() === '') {
+            setWithdrawalWalletEroo('Wallet is required');
+        }else {
+            setWithdrawalWalletEroo('');
+        }
+      };
+
+    const [bank, setBank] = useState(false)
+    const [btc, setBtc] = useState(true)
+
+    const ShowBank = () => {
+        setBank(true)
+        setBtc(false)
+
+    }
+    const ShowBtc = () => {
+        setBank(false)
+        setBtc(true)
+
+    }
 
 
     return (
@@ -156,13 +200,53 @@ const sendWithdrawcode = ()=>{
                             </div>
                         </div>
                         <div className="WithdrawFundsContentBox4">
-                            <h3>Enter BITCOIN PAYMENT Address</h3>
+                                <div className="Sweet">
+                                    <button onClick={ShowBtc}>BTC</button>
+                                    <button onClick={ShowBank}>BANK</button>
+                                </div>
+
+                                {
+                                    btc ? <>
+                                    <h3>Enter BITCOIN PAYMENT Address</h3>
                             <input
                                 type="text"
                                 placeholder="Enter BITCOIN PAYMENT Address"
                                 onChange={handlewallt}
                             />
                             <p style={{marginTop: "3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{withdrawalWalleteroo}</p>
+                                    </>: null
+                                }
+                            
+                            {/* <p>
+                                BITCOIN PAYMENT is not a default withdrawal
+                                option in your account, please enter the correct
+                                wallet address to recieve your funds.
+                            </p> */}
+                        </div>
+                        <div className="WithdrawFundsContentBox4">
+
+                                {
+                                    bank ? <>
+                                        <h3>Enter BANK Address</h3>
+                            <input
+                                type="text"
+                                placeholder="Enter your bank name"
+                                onChange={handlewallt}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter account number"
+                                onChange={handlewallt}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter BITCOIN PAYMENT Address"
+                                onChange={handlewallt}
+                            />
+                            <p style={{marginTop: "3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{withdrawalWalleteroo}</p>
+                                    </>:null
+                                }
+
                             <p>
                                 BITCOIN PAYMENT is not a default withdrawal
                                 option in your account, please enter the correct
