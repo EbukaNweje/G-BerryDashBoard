@@ -1,30 +1,30 @@
 import "./Dashboard.css";
 import Logo from "../../assets/Swift-Earn-Logo.png";
 // import Logo from "../../assets/Swift-Earn-Logo.jpg";
-import {NavLink} from "react-router-dom";
-import {IoHomeOutline} from "react-icons/io5";
-import {LuHardDriveDownload} from "react-icons/lu";
+import { NavLink } from "react-router-dom";
+import { IoHomeOutline } from "react-icons/io5";
+import { LuHardDriveDownload } from "react-icons/lu";
 import {
     FaArrowAltCircleUp,
     FaHistory,
     FaAddressCard,
     FaRegUser,
 } from "react-icons/fa";
-import {FaHandHoldingDollar} from "react-icons/fa6";
-import {BsFillCreditCard2BackFill} from "react-icons/bs";
-import {BiTransfer} from "react-icons/bi";
-import {LiaHandHoldingHeartSolid} from "react-icons/lia";
-import {LuRepeat2} from "react-icons/lu";
-import {MdOutlineMenu} from "react-icons/md";
-import {GoDatabase} from "react-icons/go";
-import {HiMiniUser} from "react-icons/hi2";
-import {FiLogOut} from "react-icons/fi";
-import {useState, useEffect, useRef} from "react";
+import { FaHandHoldingDollar } from "react-icons/fa6";
+import { BsFillCreditCard2BackFill } from "react-icons/bs";
+import { BiTransfer } from "react-icons/bi";
+import { LiaHandHoldingHeartSolid } from "react-icons/lia";
+import { LuRepeat2 } from "react-icons/lu";
+import { MdOutlineMenu } from "react-icons/md";
+import { GoDatabase } from "react-icons/go";
+import { HiMiniUser } from "react-icons/hi2";
+import { FiLogOut } from "react-icons/fi";
+import { useState, useEffect, useRef } from "react";
 // import {Outlet} from "react-router-dom";
-import {RiMenu3Fill} from "react-icons/ri";
-import {useParams} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {swiftUserData} from "../store/FeaturesSlice";
+import { RiMenu3Fill } from "react-icons/ri";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { swiftUserData } from "../store/FeaturesSlice";
 import DashHome from "../../Pages/DashHome/DashHome";
 import Deposit from "../../Pages/Deposit/Deposit";
 import WithdrawFunds from "../../Pages/Withdrawal/WithdrawFunds";
@@ -42,12 +42,12 @@ import DetailPlan from "../../Pages/MyPlans/DetailPlan";
 const Dashboard = () => {
     const dispatch = useDispatch();
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     const [userData, setUserdata] = useState({});
 
     const handleGetUser = async () => {
-        fetch(`https://g-berry-back-end.vercel.app/api/userdata/${id}`, {
+        fetch(`https://g-berry-back-end-beta.vercel.app/api/userdata/${id}`, {
             method: "GET",
         })
             .then((response) => response.json())

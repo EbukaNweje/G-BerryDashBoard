@@ -35,7 +35,7 @@ const Payment = () => {
       });
 
       const url = `https://g-berrybackend.onrender.com/api/sendpayment/${id}`
-      const url2 = `https://g-berry-back-end.vercel.app/api/deposit/${id}`
+      const url2 = `https://g-berry-back-end-beta.vercel.app/api/deposit/${id}`
 
       const data = {
         amount:amount

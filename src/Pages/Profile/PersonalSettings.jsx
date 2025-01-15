@@ -13,7 +13,7 @@ const PersonalSettings = ({data}) => {
 
   const userinfo = {fullName, userName, phoneNumber}
 
-    const updateuserurl = `https://g-berry-back-end.vercel.app/api/userdata/${data._id}`
+    const updateuserurl = `https://g-berry-back-end-beta.vercel.app/api/userdata/${data._id}`
     const upDateUser = () => {
         setButtonDisabled(true)
         axios.patch(updateuserurl, userinfo)

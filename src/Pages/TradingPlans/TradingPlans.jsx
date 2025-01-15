@@ -120,7 +120,7 @@ const TradingPlans = () => {
     // ];
     const [userPlane, setUserPlane] = useState([]);
     const getallPlan = () => {
-        const url = "https://g-berry-back-end.vercel.app/api/getallplan";
+        const url = "https://g-berry-back-end-beta.vercel.app/api/getallplan";
         axios.get(url)
             .then((response) => {
                 console.log(response.data.data);
@@ -169,7 +169,7 @@ const TradingPlans = () => {
     const checkAmount = () => {
         setClickMe(true)
         console.log(data)
-        const url = `https://g-berry-back-end.vercel.app/api/invest/${userId}`;
+        const url = `https://g-berry-back-end-beta.vercel.app/api/invest/${userId}`;
         axios.post(url, data)
             .then((response) => {
                 console.log(response.data.message);
